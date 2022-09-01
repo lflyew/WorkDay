@@ -2,7 +2,7 @@
 $(document).ready(function() {
 var day = moment().format ("dddd, MMMM Do YYYY, h:mm A");
 $("#currentDay").text(day);
-var currenthr = moment().hour;
+var currenthr = moment().hour();
 // console.log("currenthr", currenthr);
 hrcolorchange(currenthr);
 });
@@ -23,9 +23,9 @@ function hrcolorchange(currenthr) {
     }
     //     // console.log(hourS);
  
-   
+   hrcolorchange();
 
-
+//Save input in calendar
 $(".saveBtn").on("click", function(){
     var time = $(this).siblings(".hour").text();
     var desc = $(this).siblings(".description").val();
